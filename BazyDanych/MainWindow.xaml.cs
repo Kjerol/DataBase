@@ -35,6 +35,7 @@ namespace BazyDanych
             Wiek_txt.Clear();
             Plec_txt.Clear();
             Miasto_txt.Clear();
+            Szukaj_txt.Clear();
         }
 
         public void LoadGrid()
@@ -93,13 +94,57 @@ namespace BazyDanych
                     cmd.ExecuteNonQuery();
                     con.Close();
                     LoadGrid();
-                    MessageBox.Show("Udana rejestracja", "Zapisano", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Wstawianie udane", "Zapisano", MessageBoxButton.OK, MessageBoxImage.Information);
                     clearData();
                 }
             }
             catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        
+        private void UsunPrz_Click(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("delete from FirstTable where ID = " +Szukaj_txt.Text+ " ", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Rekord zostal usuniety", "Usunieto", MessageBoxButton.OK, MessageBoxImage.Information);
+                con.Close();
+                clearData();
+                LoadGrid();
+                con.Close();
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Nie usunieto" +ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void AktualizujPrz_Click(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update FirstTable set Imie = '"+Imie_txt.Text+ "', Wiek = '"+Wiek_txt.Text+ "', Plec = '"+Plec_txt.Text+ "', Miasto = '"+Miasto_txt.Text+"' WHERE ID = '"+Szukaj_txt.Text+"' ", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Rekord zaktualizowany", "Zaktualizowany", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                clearData();
+                LoadGrid();
             }
         }
     }
