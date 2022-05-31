@@ -11,15 +11,15 @@
         <Label Content="City" HorizontalAlignment="Left" Margin="64,256,0,0" VerticalAlignment="Top"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="64,128,0,0" VerticalAlignment="Top"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="64,64,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="127,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="127,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="127,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="127,68,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,64,64,156"/>
-        <Button Content="Wstaw Rekord" HorizontalAlignment="Left" Margin="80,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D"/>
-        <Button Content="Aktualizuj Rekord" HorizontalAlignment="Left" Margin="250,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D"/>
-        <Button Content="Usun Rekord" HorizontalAlignment="Left" Margin="420,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D"/>
-        <Button Content="Clear Data" HorizontalAlignment="Left" Margin="590,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D">
+        <TextBox x:Name="Miasto_txt"  HorizontalAlignment="Left" Margin="127,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Plec_txt" HorizontalAlignment="Left" Margin="127,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Wiek_txt" HorizontalAlignment="Left" Margin="127,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Imie_txt" HorizontalAlignment="Left" Margin="127,68,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,64,64,156"/>
+        <Button x:Name="WstawPrz" Content="Wstaw Rekord" HorizontalAlignment="Left" Margin="80,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="WstawPrz_Click"/>
+        <Button x:Name="AktualizujPrz" Content="Aktualizuj Rekord" HorizontalAlignment="Left" Margin="250,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D"/>
+        <Button x:Name="UsunPrz" Content="Usun Rekord" HorizontalAlignment="Left" Margin="420,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D"/>
+        <Button x:Name="ClearPrz" Content="Clear Data" HorizontalAlignment="Left" Margin="590,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="ClearPrz_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
