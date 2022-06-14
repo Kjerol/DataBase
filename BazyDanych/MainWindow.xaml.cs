@@ -32,10 +32,11 @@ namespace BazyDanych
         public void clearData()
         {
             Imie_txt.Clear();
-            Wiek_txt.Clear();
-            Plec_txt.Clear();
-            Miasto_txt.Clear();
+            Nazwisko_txt.Clear();
+            Miejscowosc_txt.Clear();
+            Ulica_txt.Clear();
             Szukaj_txt.Clear();
+            Lokal_txt.Clear();
         }
 
         public void LoadGrid()
@@ -60,21 +61,21 @@ namespace BazyDanych
                 MessageBox.Show("Imie jest wymagane", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-           /* if (Wiek_txt.Text == String.Empty)
+            if (Nazwisko_txt.Text == String.Empty)
             {
-                MessageBox.Show("Wiek jest wymagany", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Nazwisko jest wymagany", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (Plec_txt.Text == String.Empty)
+            if (Miejscowosc_txt.Text == String.Empty)
             {
-                MessageBox.Show("Plec jest wymagana", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Miejscowosc jest wymagana", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (Miasto_txt.Text == String.Empty)
+            if (Ulica_txt.Text == String.Empty)
             {
-                MessageBox.Show("Miasto jest wymagane", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ulica jest wymagane", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
-            }*/
+            }
             return true;
         }
 
@@ -131,7 +132,7 @@ namespace BazyDanych
         private void AktualizujPrz_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("update Klient set Imie = '"+Imie_txt.Text+ "', Wiek = '"+Wiek_txt.Text+ "', Plec = '"+Plec_txt.Text+ "', Miasto = '"+Miasto_txt.Text+"' WHERE ID = '"+Szukaj_txt.Text+"' ", con);
+            SqlCommand cmd = new SqlCommand("update Klient set Imie = '"+Imie_txt.Text+ "', Nazwisko = '"+Nazwisko_txt.Text+ "', Miejscowosc = '"+Miejscowosc_txt.Text+ "', Ulica = '"+Ulica_txt.Text+"' WHERE ID = '"+Szukaj_txt.Text+"' ", con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -147,6 +148,12 @@ namespace BazyDanych
                 clearData();
                 LoadGrid();
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var Window1 = new Window1();
+            Window1.Show();
         }
     }
 }

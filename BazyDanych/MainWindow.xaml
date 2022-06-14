@@ -7,14 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Miejscowosc" HorizontalAlignment="Left" Margin="64,192,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ulica" HorizontalAlignment="Left" Margin="64,256,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="64,128,0,0" VerticalAlignment="Top"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="64,64,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Miasto_txt"  HorizontalAlignment="Left" Margin="127,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Plec_txt" HorizontalAlignment="Left" Margin="127,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Wiek_txt" HorizontalAlignment="Left" Margin="127,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Imie_txt" HorizontalAlignment="Left" Margin="127,68,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Miejscowosc" HorizontalAlignment="Left" Margin="29,191,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ulica" HorizontalAlignment="Left" Margin="50,256,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="37,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="47,63,0,0" VerticalAlignment="Top"/>
+        <Label Content="Lokal" HorizontalAlignment="Left" Margin="49,318,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Ulica_txt"  HorizontalAlignment="Left" Margin="127,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Miejscowosc_txt" HorizontalAlignment="Left" Margin="127,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Nazwisko_txt" HorizontalAlignment="Left" Margin="127,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Imie_txt" HorizontalAlignment="Left" Margin="127,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Lokal_txt" HorizontalAlignment="Left" Margin="127,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DataGrid x:Name="datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,64,64,156"/>
         <Button x:Name="WstawPrz" Content="Wstaw Rekord" HorizontalAlignment="Left" Margin="80,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="WstawPrz_Click"/>
         <Button x:Name="AktualizujPrz" Content="Aktualizuj Rekord" HorizontalAlignment="Left" Margin="250,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="AktualizujPrz_Click"/>
@@ -30,8 +32,9 @@
             </Button.RenderTransform>
         </Button>
         <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Baza danych Alpha v1.0.0" VerticalAlignment="Top"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="250,314,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Szukaj_txt"  HorizontalAlignment="Left" Margin="280,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="57,24,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Szukaj_txt"  HorizontalAlignment="Left" Margin="127,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="400,307,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>
