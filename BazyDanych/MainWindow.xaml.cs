@@ -28,7 +28,7 @@ namespace BazyDanych
             LoadGrid();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=NewDB;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=RTV_Karol_Chodzba;Integrated Security=True");
         public void clearData()
         {
             Imie_txt.Clear();
@@ -40,7 +40,7 @@ namespace BazyDanych
 
         public void LoadGrid()
         {
-            SqlCommand cmd = new SqlCommand("select * from FirstTable", con);
+            SqlCommand cmd = new SqlCommand("select * from Klient", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -60,7 +60,7 @@ namespace BazyDanych
                 MessageBox.Show("Imie jest wymagane", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (Wiek_txt.Text == String.Empty)
+           /* if (Wiek_txt.Text == String.Empty)
             {
                 MessageBox.Show("Wiek jest wymagany", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -74,7 +74,7 @@ namespace BazyDanych
             {
                 MessageBox.Show("Miasto jest wymagane", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
-            }
+            }*/
             return true;
         }
 
@@ -84,12 +84,13 @@ namespace BazyDanych
             {
                 if (isValid())
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO FirstTable VALUES (@Imie, @Wiek, @Plec, @Miasto)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Klient VALUES (@Imie, @Nazwisko, @Miejscowosc, @Ulica, @Lokal)", con);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@Imie", Imie_txt.Text);
-                    cmd.Parameters.AddWithValue("@Wiek", Wiek_txt.Text);
-                    cmd.Parameters.AddWithValue("@Plec", Plec_txt.Text);
-                    cmd.Parameters.AddWithValue("@Miasto", Miasto_txt.Text);
+                    cmd.Parameters.AddWithValue("@Nazwisko", Nazwisko_txt.Text);
+                    cmd.Parameters.AddWithValue("@Miejscowosc", Miejscowosc_txt.Text);
+                    cmd.Parameters.AddWithValue("@Ulica", Ulica_txt.Text);
+                    cmd.Parameters.AddWithValue("@Lokal", Lokal_txt.Text);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -107,7 +108,7 @@ namespace BazyDanych
         private void UsunPrz_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("delete from FirstTable where ID = " +Szukaj_txt.Text+ " ", con);
+            SqlCommand cmd = new SqlCommand("delete from Klient where ID = " +Szukaj_txt.Text+ " ", con);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -130,7 +131,7 @@ namespace BazyDanych
         private void AktualizujPrz_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("update FirstTable set Imie = '"+Imie_txt.Text+ "', Wiek = '"+Wiek_txt.Text+ "', Plec = '"+Plec_txt.Text+ "', Miasto = '"+Miasto_txt.Text+"' WHERE ID = '"+Szukaj_txt.Text+"' ", con);
+            SqlCommand cmd = new SqlCommand("update Klient set Imie = '"+Imie_txt.Text+ "', Wiek = '"+Wiek_txt.Text+ "', Plec = '"+Plec_txt.Text+ "', Miasto = '"+Miasto_txt.Text+"' WHERE ID = '"+Szukaj_txt.Text+"' ", con);
             try
             {
                 cmd.ExecuteNonQuery();

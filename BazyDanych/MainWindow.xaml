@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Gender" HorizontalAlignment="Left" Margin="64,192,0,0" VerticalAlignment="Top"/>
-        <Label Content="City" HorizontalAlignment="Left" Margin="64,256,0,0" VerticalAlignment="Top"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="64,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Miejscowosc" HorizontalAlignment="Left" Margin="64,192,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ulica" HorizontalAlignment="Left" Margin="64,256,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="64,128,0,0" VerticalAlignment="Top"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="64,64,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Miasto_txt"  HorizontalAlignment="Left" Margin="127,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Plec_txt" HorizontalAlignment="Left" Margin="127,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
