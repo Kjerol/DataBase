@@ -18,10 +18,10 @@
         <TextBox x:Name="Imie_txt" HorizontalAlignment="Left" Margin="127,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Lokal_txt" HorizontalAlignment="Left" Margin="127,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DataGrid x:Name="datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,64,64,156"/>
-        <Button x:Name="WstawPrz" Content="Wstaw Rekord" HorizontalAlignment="Left" Margin="80,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="WstawPrz_Click"/>
-        <Button x:Name="AktualizujPrz" Content="Aktualizuj Rekord" HorizontalAlignment="Left" Margin="250,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="AktualizujPrz_Click"/>
-        <Button x:Name="UsunPrz" Content="Usun Rekord" HorizontalAlignment="Left" Margin="420,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="UsunPrz_Click"/>
-        <Button x:Name="ClearPrz" Content="Clear Data" HorizontalAlignment="Left" Margin="590,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#FFFF8D8D" Click="ClearPrz_Click">
+        <Button x:Name="WstawPrz" Content="Wstaw Rekord" HorizontalAlignment="Left" Margin="80,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#43B3AE" Click="WstawPrz_Click"/>
+        <Button x:Name="AktualizujPrz" Content="Aktualizuj Rekord" HorizontalAlignment="Left" Margin="250,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#43B3AE" Click="AktualizujPrz_Click"/>
+        <Button x:Name="UsunPrz" Content="Usun Rekord" HorizontalAlignment="Left" Margin="420,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#43B3AE" Click="UsunPrz_Click"/>
+        <Button x:Name="ClearPrz" Content="Usun dane" HorizontalAlignment="Left" Margin="590,369,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" Background="#43B3AE" Click="ClearPrz_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -34,7 +34,7 @@
         <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Baza danych Alpha v1.0.0" VerticalAlignment="Top"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="57,24,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Szukaj_txt"  HorizontalAlignment="Left" Margin="127,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="400,307,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Sprzedaz" HorizontalAlignment="Left" Margin="400,307,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>

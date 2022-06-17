@@ -22,13 +22,26 @@ namespace BazyDanych
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
+        /// <summary>
+        /// Inicjuje nową instancję <see cref="MainWindow" />.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             LoadGrid();
         }
 
+        /// <summary>
+        /// Połączenie
+        /// </summary>
         SqlConnection con = new SqlConnection(@"Data Source=(localdb)\Local;Initial Catalog=RTV_Karol_Chodzba;Integrated Security=True");
+
+
+        /// <summary>
+        /// Czyści dane.
+        /// </summary>
         public void clearData()
         {
             Imie_txt.Clear();
@@ -39,6 +52,9 @@ namespace BazyDanych
             Lokal_txt.Clear();
         }
 
+        /// <summary>
+        /// Wczytuje zawartość.
+        /// </summary>
         public void LoadGrid()
         {
             SqlCommand cmd = new SqlCommand("select * from Klient", con);
@@ -49,11 +65,17 @@ namespace BazyDanych
             con.Close();
             datagrid.ItemsSource = dt.DefaultView;
         }
+        /// <summary>Obsługuje zdarzenie ClearPrz.</summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs" /> Instancja zawierająca dane zdarzenia.</param>
         private void ClearPrz_Click(object sender, RoutedEventArgs e)
         {
             clearData();
         }
 
+        /// <summary>Okresla prawidłowość instancji.</summary>
+        /// <returns>
+        ///   <c>true</c> jesli instancja jest prawidłowa; inaczej, <c>false</c>.</returns>
         public bool isValid()
         {
             if(Imie_txt.Text == String.Empty)
@@ -63,7 +85,7 @@ namespace BazyDanych
             }
             if (Nazwisko_txt.Text == String.Empty)
             {
-                MessageBox.Show("Nazwisko jest wymagany", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Nazwisko jest wymagane", "Nie udało się", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             if (Miejscowosc_txt.Text == String.Empty)
@@ -79,6 +101,9 @@ namespace BazyDanych
             return true;
         }
 
+        /// <summary>Obsługuje zdarzenia WstawPrz.</summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs" /> Instancja zawierająca dane zdarzenia.</param>
         private void WstawPrz_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -105,7 +130,10 @@ namespace BazyDanych
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        /// <summary>Obsługuje zdarzenia UsunPrz.</summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> Instancja zawierająca dane zdarzenia.</param>
         private void UsunPrz_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
@@ -129,6 +157,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>Obsługuje zdarzenie AktualizujPrz.</summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e"> <see cref="RoutedEventArgs" /> Instancja zawierająca dane zdarzenia.</param>
         private void AktualizujPrz_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
@@ -150,6 +181,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>Obsługuje zdarzenie Button.</summary>
+        /// <param name="sender">Źródło zdarzenia.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> Instancja zawierająca dane zdarzenia.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var Window1 = new Window1();
